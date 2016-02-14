@@ -1,7 +1,7 @@
 var connection= require('./connection.js');
 
 
-var orm {
+var orm = {
   addBurger: function(burgerName, cb) {
     var query = "INSERT INTO burgers (burger_name, devoured) VALUES (?, FALSE)";
     connection.query(query, [burgerName], function(err, res) {
