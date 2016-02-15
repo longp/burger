@@ -1,4 +1,4 @@
-var connection= require('./connection.js');
+var connection= require('../config/connection.js');
 
 
 var orm = {
@@ -8,22 +8,21 @@ var orm = {
       if(err) throw err;
       cb(res);
     });
-  }
-  devourBurger: function((burgerName, cb) {
+  },
+  devourBurger: function(burgerName, cb) {
     var query = "UPDATE burgers SET devoured=true WHERE burger_name=?";
     connection.query(query, [burgerName], function(err, res) {
       if (err) throw  err;
       cb(res);
     });
-  }
-  showBurgers: function(tableInput, cb) {
-    var query = "SELECT * FROM ?";
-    connection.query(query, [tableInput], function(err, res) {
+  },
+  showBurgers: function(cb) {
+    var query = "SELECT * FROM burgers";
+    connection.query(query, function(err, res) {
       if(err) throw err;
       cb(res);
     });
   } 
-
 }
 
 

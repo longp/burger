@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row"> 
     {{#each burgers_data}}
-      {{#if !this.devoured}}
+      
         <div class="col-md-6">
           <table class="table table-condensed">
             <thead>
@@ -15,14 +15,13 @@
             </thead>
             <tbody>
               <tr>
-                <span>this.burger_name</span>
-                <button class="btn btn-danger"> X </button>
+                <span>{{this.burger_name}}</span>
+                <button class="btn btn-warning"> Devour It </button>
               </tr>
             </tbody>
           </table>
         </div>
-      {{/if}}
-      {{if this.devoured}}
+     
         <div class="col-md-6">
           <table class="table table-condensed">
             <thead>
@@ -32,13 +31,13 @@
             </thead>
             <tbody>
               <tr>
-                <span>this.burger_name</span>
+                <span>{{this.burger_name}}</span>
                 <button class="btn btn-danger"> X </button>
               </tr>
             </tbody>
           </table>
         </div>
-      {{/if}}
+      
     {{/each}}
   </div>
   <div class="row">

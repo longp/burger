@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
   });
 });
 
-router.get('/add', function (req, res) {
+router.post('/add', function (req, res) {
   burger.addBurger(req.body.burger_name, function (result) {
     console.log(result);
     res.redirect('/');
