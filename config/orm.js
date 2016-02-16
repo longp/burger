@@ -10,7 +10,7 @@ var orm = {
     });
   },
   devourBurger: function(burgerName, cb) {
-    var query = "UPDATE burgers SET devoured=true WHERE burger_name=?";
+    var query = "UPDATE burgers SET devoured=false WHERE burger_name=?";
     connection.query(query, [burgerName], function(err, res) {
       if (err) throw  err;
       cb(res);
@@ -23,6 +23,7 @@ var orm = {
       cb(res);
     });
   } 
+ 
 }
 
 
