@@ -7,7 +7,7 @@ var burger = {
       cb(res);
     });
   },
-  devourBurger: function(cb) {
+  devourBurger: function(burgerName, cb) {
     orm.devourBurger(burgerName, function(res) {
       cb(res);
     });

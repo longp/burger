@@ -14,18 +14,32 @@
             </tr>
           </thead>
           <tbody>
-            <pre> {{this.burger_name}} </pre>
             <tr>
-            <form method="POST" action="/devour?_method=PUT">
-              <input type="hidden" type="text" name="burger_id" value={{this.id}}>
+            <form method="POST" action="/devour">
+              {{this.burger_name}}
+              <input type="hidden" type="text" name="burger_name" value={{this.burger_name}}>
               <button type="submit" class="btn btn-warning"> Devour It </button>
             </form>
             </tr>
           </tbody>
-        </table>
-        {{/if}}
-      {{/each}}
+        </table>        
       </div>
+      {{/if}}
+      <div class="col-md-6">
+        <table class="table table-condesned">
+          <thead>
+            <th>
+              Devoured burgers
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              {{this.burger_name}}
+            </tr>
+          </tbody>
+        </table>    
+  </div>
+  {{/each}} 
   </div>
   <div class="row">
     <div class="col-md-6 col-md-3-offset">
