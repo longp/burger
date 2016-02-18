@@ -9,9 +9,9 @@ var orm = {
       cb(res);
     });
   },
-  devourBurger: function(burgerName, cb) {
-    var query = "UPDATE burgers SET devoured=false, ready=true WHERE burger_name=?";
-    connection.query(query, [burgerName], function(err, res) {
+  devourBurger: function(burgerID, cb) {
+    var query = "UPDATE burgers SET devoured=false, ready=true WHERE id=?";
+    connection.query(query, [burgerID], function(err, res) {
       if (err) throw  err;
       cb(res);
     });
@@ -22,7 +22,14 @@ var orm = {
       if(err) throw err;
       cb(res);
     });
-  } 
+  }, 
+  deleteBurger: function(burgerID, cb) {
+    var query = "DELETE FROM burgers WHERE ID = ? ";
+    connection.query(query, [burgerID], function (err, res) {
+      if(err) throw err;
+      cb(res);
+    });
+  }
  
 }
 

@@ -18,10 +18,17 @@ router.post('/add', function (req, res) {
 });
 
 router.post('/devour', function (req, res) {
-  burger.devourBurger(req.body.burger_name, function (result) {
+  burger.devourBurger(req.body.id, function (result) {
     console.log(result);
     res.redirect('/');
   });
 });
+
+router.delete('/delete', function (req, res) {
+  burger.deleteBurger(req.body.id, function(result) {
+    console.log(result);
+    res.redirect('/');
+  })
+})
 
 module.exports = router;

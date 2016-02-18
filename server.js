@@ -23,6 +23,7 @@ var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 app.use('/add', routes);
 app.use('/devour', routes);
+app.use('delete', routes)
 
 var port = 3000;
 app.listen(port);

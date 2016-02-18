@@ -7,13 +7,18 @@ var burger = {
       cb(res);
     });
   },
-  devourBurger: function(burgerName, cb) {
-    orm.devourBurger(burgerName, function(res) {
+  devourBurger: function(burgerID, cb) {
+    orm.devourBurger(burgerID, function(res) {
       cb(res);
     });
   },
   showBurgers: function(cb) {
     orm.showBurgers(function(res) {
+      cb(res);
+    });
+  },
+  deleteBurger: function(burgerID, cb) {
+    orm.deleteBurger(burgerID, function(res) {
       cb(res);
     });
   }

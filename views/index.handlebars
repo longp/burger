@@ -16,7 +16,7 @@
               <li> 
                 <form method="POST" action="/devour">
                   {{this.burger_name}}
-                  <input type="hidden" type="text" name="burger_name" value={{this.burger_name}}>
+                  <input type="hidden" type="text" name="id" value={{this.id}}>
                   <button type="submit" class="btn btn-sm btn-warning pull-right"> Devour It </button>
                 </form> 
               </li>    
@@ -36,7 +36,11 @@
           <tr>
             <ul>
               <li>
-                {{this.burger_name}}
+              <form method="POST" action="/delete?_method=DELETE">
+              {{this.burger_name}} 
+                <input type="hidden" type="text" name="id" value={{this.id}}>
+                <button type="submit" class="btn btn-sm btn-danger pull-right">x</button>
+              </form>
               </li>
             </ul>
           </tr>
