@@ -1,46 +1,52 @@
 <div class="well">
-  <h1> BURGERS </h1>
+  <h1>EAT DA BURGERS </h1>
 </div>
 
 <div class="container-fluid">
   <div class="row">   
-      <div class="col-md-6">
-      {{#each burgers_data}}
-        {{#if this.devoured}}  
-        <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th> Burgers </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-            <form method="POST" action="/devour">
-              {{this.burger_name}}
-              <input type="hidden" type="text" name="burger_name" value={{this.burger_name}}>
-              <button type="submit" class="btn btn-warning"> Devour It </button>
-            </form>
-            </tr>
-          </tbody>
-        </table>        
-      </div>
-      {{/if}}
-      <div class="col-md-6">
-        <table class="table table-condesned">
-          <thead>
-            <th>
-              Devoured burgers
-            </th>
-          </thead>
-          <tbody>
-            <tr>
-              {{this.burger_name}}
-            </tr>
-          </tbody>
-        </table>    
+    <div class="col-md-6"> 
+      <table class="table table-condensed">
+      <thead><h1> Available Burgers </h1></thead>
+        <br>
+        {{#each burgers_data}}
+        {{#if this.devoured}}
+        <tbody>
+          <tr>     
+            <ul>
+              <li> 
+                <form method="POST" action="/devour">
+                  {{this.burger_name}}
+                  <input type="hidden" type="text" name="burger_name" value={{this.burger_name}}>
+                  <button type="submit" class="btn btn-sm btn-warning pull-right"> Devour It </button>
+                </form> 
+              </li>    
+            </ul>
+          </tr>
+        {{/if}} 
+        {{/each}} 
+        </tbody>
+      </table>        
+    </div> 
+    <div class="col-md-6">
+      <table class="table table-condensed">
+        <thead><h1>DEVOURED</h1></thead>
+        {{#each burgers_data}}
+        {{#if this.ready}}
+        <tbody>
+          <tr>
+            <ul>
+              <li>
+                {{this.burger_name}}
+              </li>
+            </ul>
+          </tr>
+          {{/if}}
+          {{/each}}
+        </tbody>
+      </table>  
+    </div> 
   </div>
-  {{/each}} 
-  </div>
+</div>
   <div class="row">
     <div class="col-md-6 col-md-3-offset">
       <form action="/add" method="POST">
