@@ -11,4 +11,4 @@ CREATE TABLE burgers (
   PRIMARY KEY (id)
 );
 
--- INSERT INTO burgers (burger_name, ready, devoured) VALUES ('TEST', FALSE, TRUE)
+INSERT INTO burgers (burger_name, ready, devoured) VALUES ('TEST', FALSE, TRUE)

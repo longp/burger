@@ -1,12 +1,11 @@
-<div class="well">
-  <h1>EAT DA BURGERS </h1>
-</div>
-
 <div class="container-fluid">
+  <div class="well text-center">
+    <h1 >EAT DA BURGERS </h1>
+  </div>
   <div class="row">   
     <div class="col-md-6"> 
-      <table class="table table-condensed">
-      <thead><h1> Available Burgers </h1></thead>
+      <table class="table table-bordered">
+      <thead ><h1> Available Burgers </h1></thead>
         <br>
         {{#each burgers_data}}
         {{#if this.devoured}}
@@ -28,7 +27,7 @@
       </table>        
     </div> 
     <div class="col-md-6">
-      <table class="table table-condensed">
+      <table class="table table-bordered">
         <thead><h1>DEVOURED</h1></thead>
         {{#each burgers_data}}
         {{#if this.ready}}
@@ -39,7 +38,7 @@
               <form method="POST" action="/delete?_method=DELETE">
               {{this.burger_name}} 
                 <input type="hidden" type="text" name="id" value={{this.id}}>
-                <button type="submit" class="btn btn-sm btn-danger pull-right">x</button>
+                <button type="submit" class="btn btn-sm btn-danger pull-right">Delete it</button>
               </form>
               </li>
             </ul>
